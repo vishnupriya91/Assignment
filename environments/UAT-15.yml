@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "15"
+mappingDefinitions:
+  SRC:
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCDS_SF100TCL
+  TARGET:
+    database: TRAINING
+    schema: ASSIGNMENT
+name: UAT
+type: Environment
