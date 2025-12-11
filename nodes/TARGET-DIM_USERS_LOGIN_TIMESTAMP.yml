@@ -7,7 +7,7 @@ operation:
     preSQL: ""
     testsEnabled: true
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   isMultisource: false
   locationName: TARGET
@@ -186,7 +186,7 @@ operation:
           - columnReferences:
               - columnCounter: f380018e-b172-4e13-b09b-589202b1dc13
                 stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
-            transform: ""
+            transform: MAX("FCT_LOGIN_HISTORY"."LOGIN_TIMESTAMP")
       - acceptedValues:
           strictMatch: true
           values: []
@@ -273,6 +273,7 @@ operation:
             FROM {{ ref('TARGET', 'DIM_USERS') }} "DIM_USERS"
             INNER JOIN {{ ref('TARGET', 'FCT_LOGIN_HISTORY') }} "FCT_LOGIN_HISTORY"
             ON "DIM_USERS"."USER_ID" = "FCT_LOGIN_HISTORY"."USER_ID"
+            GROUP BY ALL
         name: DIM_USERS_LOGIN_TIMESTAMP
         noLinkRefs: []
   name: DIM_USERS_LOGIN_TIMESTAMP
