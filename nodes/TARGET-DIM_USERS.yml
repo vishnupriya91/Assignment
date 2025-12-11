@@ -7,7 +7,7 @@ operation:
     preSQL: ""
     testsEnabled: true
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   isMultisource: false
   locationName: TARGET
@@ -32,6 +32,8 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: edc5a374-7c7d-43f7-81ee-f5bd22b53a42
@@ -47,6 +49,8 @@ operation:
               - columnCounter: abeb207c-365f-4ca0-871a-79f89b1aa90a
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
             transform: ""
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 7ce7a7b7-4562-4352-b99a-28a1abf9ec12
@@ -60,6 +64,8 @@ operation:
           - columnReferences:
               - columnCounter: 171e0cf9-06af-47d7-9f33-63abfc40a3b1
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+            transform: ""
+          - columnReferences: []
             transform: ""
       - appliedColumnTests: {}
         columnReference:
@@ -75,6 +81,8 @@ operation:
               - columnCounter: 6e41d587-fca1-414a-8c18-d538521e492b
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
             transform: ""
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: d08eced5-f383-4c9b-b0f4-5e50ed732bf0
@@ -88,6 +96,8 @@ operation:
           - columnReferences:
               - columnCounter: d068e757-d66a-4ffd-956a-a12f3d874412
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+            transform: ""
+          - columnReferences: []
             transform: ""
       - appliedColumnTests: {}
         columnReference:
@@ -103,6 +113,8 @@ operation:
               - columnCounter: be6df389-e238-4089-87f4-a2d4b2eb6f96
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
             transform: ""
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 85e464ff-10c7-4763-978d-5d91439dc9e0
@@ -117,6 +129,8 @@ operation:
               - columnCounter: 3c76b764-584a-4c08-a978-06cb96d26b58
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
             transform: ""
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 0c28a55a-e460-4483-9908-b3d7e8b1f5cd
@@ -130,6 +144,8 @@ operation:
           - columnReferences:
               - columnCounter: e6b2471b-024e-4fa1-826f-ac2f392a07f2
                 stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+            transform: ""
+          - columnReferences: []
             transform: ""
       - acceptedValues:
           strictMatch: true
@@ -146,6 +162,8 @@ operation:
         name: SYSTEM_VERSION
         nullable: true
         sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
           - columnReferences: []
             transform: ""
       - acceptedValues:
@@ -165,6 +183,8 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
+          - columnReferences: []
+            transform: ""
       - acceptedValues:
           strictMatch: true
           values: []
@@ -180,6 +200,8 @@ operation:
         name: SYSTEM_START_DATE
         nullable: true
         sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - acceptedValues:
@@ -199,6 +221,8 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
       - acceptedValues:
           strictMatch: true
           values: []
@@ -214,6 +238,8 @@ operation:
         name: SYSTEM_CREATE_DATE
         nullable: true
         sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - acceptedValues:
@@ -233,26 +259,8 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 5825bd71-7afe-4fa4-bd3a-7017ae738333
-          stepCounter: badc229e-dee7-4f2d-9cec-a5821ef4f76e
-        config: {}
-        dataType: VARCHAR(50)
-        defaultValue: ""
-        description: ""
-        keyColumnType: None
-        name: LOGIN_TIMESTAMP
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: "0"
-                stepCounter: "0"
-            transform: ""
-        systemColumnType: None
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -266,6 +274,14 @@ operation:
         join:
           joinCondition: FROM {{ ref('TARGET', 'STG_USERS') }} "STG_USERS"
         name: DIM_USERS
+        noLinkRefs: []
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: ""
         noLinkRefs: []
   name: DIM_USERS
   overrideSQL: false

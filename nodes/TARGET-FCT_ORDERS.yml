@@ -7,7 +7,7 @@ operation:
     preSQL: ""
     testsEnabled: true
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: Orders data as defined by TPC-H
   isMultisource: false
   locationName: TARGET

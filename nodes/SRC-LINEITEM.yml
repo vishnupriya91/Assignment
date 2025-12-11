@@ -3,7 +3,7 @@ id: cf1dfef5-30d6-4c76-b624-190409b04520
 name: LINEITEM
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: Lineitem data as defined by TPC-H
   locationName: SRC
   metadata:

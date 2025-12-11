@@ -3,7 +3,7 @@ id: cae0e614-3db1-4818-841a-0ed3d2d21362
 name: ORDERS
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: Orders data as defined by TPC-H
   locationName: SRC
   metadata:
