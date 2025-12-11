@@ -1,0 +1,124 @@
+fileVersion: 1
+id: eb4e789e-bd4d-4fd7-9613-8519a1190686
+name: STG_LOGIN_HISTORY
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b0ed8a93-7ffc-4017-9978-9f3a9022af68
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 83d4df57-b308-48df-97f1-2f9279d4f085
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 629bfc23-c6e1-45da-929a-20152eb03372
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: USER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70372cf9-e45d-4077-b909-a5e453032a05
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e068484e-c7f2-49e3-b0f5-edbed415c8ba
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e158e55-a761-40f9-a2f1-c0832b9d7e76
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f64058a3-9571-4be5-b202-ee740c15f244
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: IP_ADDRESS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 369e9e61-c1af-4767-ac3f-4264249aa000
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e60a3ad8-927d-4dec-9a04-3eaf5d429591
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ec71d77-eb79-4e4a-8c06-b489a080bc68
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 007e2744-83fd-4a34-9f34-4528c7378620
+          stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e292871-2b83-4ad2-a680-ebf5fca46581
+                stepCounter: 950fa016-748b-45be-9d6c-07ccc8e89822
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOGIN_HISTORY: 950fa016-748b-45be-9d6c-07ccc8e89822
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOGIN_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SRC', 'LOGIN_HISTORY') }} "LOGIN_HISTORY"
+        name: STG_LOGIN_HISTORY
+        noLinkRefs: []
+  name: STG_LOGIN_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

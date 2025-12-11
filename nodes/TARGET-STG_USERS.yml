@@ -1,0 +1,138 @@
+fileVersion: 1
+id: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+name: STG_USERS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: abeb207c-365f-4ca0-871a-79f89b1aa90a
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: USER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc171bee-305e-4c90-8113-c8cf9b6ef00b
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 171e0cf9-06af-47d7-9f33-63abfc40a3b1
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: USERNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60e000aa-4a98-4c8d-81e1-b5b160a31c57
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e41d587-fca1-414a-8c18-d538521e492b
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: EMAIL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0d6c402-444d-41ff-a139-02e03d46a605
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d068e757-d66a-4ffd-956a-a12f3d874412
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: PASSWORD_HASH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 35d560b7-ded8-4588-b75e-4a03d16969f4
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be6df389-e238-4089-87f4-a2d4b2eb6f96
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: FIRST_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70ec1a48-7b96-4542-8f08-1e04d59c8f59
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c76b764-584a-4c08-a978-06cb96d26b58
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: LAST_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f02a012-916b-4075-a1ac-bd8e1ed00f81
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6b2471b-024e-4fa1-826f-ac2f392a07f2
+          stepCounter: 070a9dbd-22ab-4731-8a98-efb2bd2cf406
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: CREATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90830072-3956-4e3e-aad3-f1312fde59ea
+                stepCounter: bff495a6-3fc9-4342-89b1-221610fcfb19
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          USERS: bff495a6-3fc9-4342-89b1-221610fcfb19
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: USERS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'USERS') }} "USERS"
+        name: STG_USERS
+        noLinkRefs: []
+  name: STG_USERS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

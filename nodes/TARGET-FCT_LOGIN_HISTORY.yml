@@ -1,0 +1,162 @@
+fileVersion: 1
+id: 79561c99-22f1-400f-9fa7-8f97543b1e99
+name: FCT_LOGIN_HISTORY
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbbbf1ac-d97d-40d2-bd8b-305b0ad51605
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0ed8a93-7ffc-4017-9978-9f3a9022af68
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67911706-9ba3-485b-8842-f46331f59218
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: USER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 629bfc23-c6e1-45da-929a-20152eb03372
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f380018e-b172-4e13-b09b-589202b1dc13
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e068484e-c7f2-49e3-b0f5-edbed415c8ba
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e45ee99c-429c-4cb4-9727-a28d563069c9
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: IP_ADDRESS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f64058a3-9571-4be5-b202-ee740c15f244
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b1d6aba-151e-4d30-899e-757a53f6a741
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LOGIN_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e60a3ad8-927d-4dec-9a04-3eaf5d429591
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac85fe65-1694-4283-8ead-3b3b752b4f76
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 007e2744-83fd-4a34-9f34-4528c7378620
+                stepCounter: eb4e789e-bd4d-4fd7-9613-8519a1190686
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbdedc5c-1765-4eb8-a5f0-01c71f914651
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3287088e-bb20-4f38-b1d2-61b5a3455bbd
+          stepCounter: 79561c99-22f1-400f-9fa7-8f97543b1e99
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_USERS: badc229e-dee7-4f2d-9cec-a5821ef4f76e
+          STG_LOGIN_HISTORY: eb4e789e-bd4d-4fd7-9613-8519a1190686
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: DIM_USERS
+          - locationName: TARGET
+            nodeName: STG_LOGIN_HISTORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STG_LOGIN_HISTORY') }} "STG_LOGIN_HISTORY"
+            INNER JOIN {{ ref('TARGET', 'DIM_USERS') }} "DIM_USERS"
+            ON "STG_LOGIN_HISTORY"."USER_ID" = "DIM_USERS"."USER_ID"
+        name: FCT_LOGIN_HISTORY
+        noLinkRefs: []
+  name: FCT_LOGIN_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node

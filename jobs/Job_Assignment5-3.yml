@@ -1,6 +1,6 @@
 excludeSelector: ""
 fileVersion: 1
 id: "3"
-includeSelector: "+{location: TARGET name: FCT_LINEITEM_ORDER}"
+includeSelector: "+{location: TARGET name: DIM_USERS_LOGIN_TIMESTAMP}"
 name: Job_Assignment5
 type: Job
