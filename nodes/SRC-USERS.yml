@@ -3,7 +3,7 @@ id: bff495a6-3fc9-4342-89b1-221610fcfb19
 name: USERS
 operation:
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: ""
   locationName: SRC
   metadata:
