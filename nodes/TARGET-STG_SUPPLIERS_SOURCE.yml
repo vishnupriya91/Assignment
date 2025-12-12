@@ -1,0 +1,118 @@
+fileVersion: 1
+id: efb81fe8-b70e-490c-b6e9-63ae278e8159
+name: STG_SUPPLIERS_SOURCE
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e421b7d-46f6-45e1-99f0-1fb2ba269cd0
+          stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: SUPPLIER_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4047b9c-be6a-4596-8d55-0e9d32ebcdc3
+                stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f65495ba-faaa-4ccf-a329-98083753a2b7
+          stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: SUPPLIER_NAME_STD
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eecbd6cd-9985-4724-94bc-c94645c90eb9
+                stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+            transform: UPPER("SUPPLIERS_SOURCE"."SUPPLIER_NAME")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8839b3f3-d421-433c-9779-42fee5267c1f
+          stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afc57483-c780-4002-96ce-324aaaccec13
+                stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4562822-bd37-491a-8d52-d61ea44e7684
+          stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 305d80ca-99cd-40c5-809c-0d585d84baf5
+                stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9f35b1d1-7c53-48ea-a3cf-19ce27668d11
+          stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: SUPPLIER_LOCATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CONCAT_WS(', ', COALESCE("SUPPLIERS_SOURCE"."CITY", ''), COALESCE("SUPPLIERS_SOURCE"."COUNTRY", ''))
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          SUPPLIERS_SOURCE: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: SUPPLIERS_SOURCE
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'SUPPLIERS_SOURCE') }} "SUPPLIERS_SOURCE"
+            WHERE "SUPPLIERS_SOURCE"."COUNTRY" IS NOT NULL
+        name: STG_SUPPLIERS_SOURCE
+        noLinkRefs: []
+  name: STG_SUPPLIERS_SOURCE
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

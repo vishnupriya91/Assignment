@@ -1,0 +1,181 @@
+fileVersion: 1
+id: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+name: STG_PRODUCTS_SOURCE
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce4d359e-ebb7-4ac8-b96b-78420cd80cff
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PRODUCT_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b3a5dc1-fb87-4ab8-9ba0-ddac7e3157d3
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b915973e-09b7-424d-bd2a-723009c667e1
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: PRODUCT_NAME_STD
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3c9ab122-c3e1-43b0-9efa-0855235972c1
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: UPPER("PRODUCTS_SOURCE"."PRODUCT_NAME")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f51dfe1-46ac-4df0-83de-06df8a29c379
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65786d54-ffbc-485a-a7bd-6082a260891b
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b07362a1-bb06-46a8-b6c3-e0f21a855084
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: PRICE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55d2adf5-6163-417a-b718-a89b0f33c382
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9dd6388c-385b-43c5-968d-c707cff5f97a
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STOCK_LEVEL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e9f1f03-d363-42ea-92f5-63f2d7183e60
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ffa7c1c-20dc-4700-9f04-e013d0b9aefd
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: CREATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84491d37-10ff-48f0-9537-de6a804ac546
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 11b4c283-c216-4fd3-b93b-14e56bf46084
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: SUPPLIER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3252775b-383d-493a-8394-c75b5bc03607
+                stepCounter: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3341276c-93a1-4ba1-85c2-44e0a8a250a8
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: INVENTORY_VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "\"PRODUCTS_SOURCE\".\"PRICE\" * \"PRODUCTS_SOURCE\".\"STOCK_LEVEL\""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e637635-569d-41f3-b671-e0267896d08f
+          stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: LOAD_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: current_date()
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          PRODUCTS_SOURCE: 997d7f0a-db9e-43d1-b9f0-72eadf4ef2cc
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: PRODUCTS_SOURCE
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'PRODUCTS_SOURCE') }} "PRODUCTS_SOURCE"
+            WHERE "PRODUCTS_SOURCE"."PRICE" > 0 AND
+            "PRODUCTS_SOURCE"."STOCK_LEVEL" >= 0
+        name: STG_PRODUCTS_SOURCE
+        noLinkRefs: []
+  name: STG_PRODUCTS_SOURCE
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

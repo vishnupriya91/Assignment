@@ -1,0 +1,197 @@
+fileVersion: 1
+id: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+name: STG_PRODUCTS_SUPPLIERS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 253a0014-f379-4fa8-b109-941d4bddab04
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: VARCHAR(100)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: VALUE_SEGMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: |
+              CASE
+                  WHEN "STG_PRODUCTS_SOURCE"."INVENTORY_VALUE" > 50000 THEN 'HIGH_VALUE'
+                  WHEN "STG_PRODUCTS_SOURCE"."INVENTORY_VALUE" > 10000 THEN 'MEDIUM_VALUE'
+                  ELSE 'LOW_VALUE'
+              END 
+        systemColumnType: None
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87939ccf-9412-49ce-9046-37fb9924a9c6
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f51dfe1-46ac-4df0-83de-06df8a29c379
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f768c614-c7fe-44ac-a3c6-562275f5f61e
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: INVENTORY_VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3341276c-93a1-4ba1-85c2-44e0a8a250a8
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 76c5a9b0-0657-4d15-8c7c-bebfdf99fd58
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: LOAD_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e637635-569d-41f3-b671-e0267896d08f
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac31c64e-b676-4827-bba3-48151b587eb9
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: PRICE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b07362a1-bb06-46a8-b6c3-e0f21a855084
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f33b661a-0780-4458-8b39-6a3bfd2413ae
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PRODUCT_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce4d359e-ebb7-4ac8-b96b-78420cd80cff
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: TRUNC("STG_PRODUCTS_SOURCE"."PRODUCT_ID", 0)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5e37c85-e227-4502-aa26-d327b44bd960
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: PRODUCT_NAME_STD
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b915973e-09b7-424d-bd2a-723009c667e1
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cab9dffb-fc28-4b70-9475-0bf4e0851e1c
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STOCK_LEVEL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9dd6388c-385b-43c5-968d-c707cff5f97a
+                stepCounter: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a9a5583-c7a1-4447-b024-fc3eec3d900c
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: SUPPLIER_LOCATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f35b1d1-7c53-48ea-a3cf-19ce27668d11
+                stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ed60de1-7c61-4a57-bd3f-5f94140a7c08
+          stepCounter: d348eb73-5c50-4ebd-a15e-54f7a2f910cd
+        config: {}
+        dataType: VARCHAR(255)
+        description: ""
+        name: SUPPLIER_NAME_STD
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f65495ba-faaa-4ccf-a329-98083753a2b7
+                stepCounter: efb81fe8-b70e-490c-b6e9-63ae278e8159
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_PRODUCTS_SOURCE: 51ca7c29-7476-44f3-b1b6-8bbcd504b348
+          STG_SUPPLIERS_SOURCE: efb81fe8-b70e-490c-b6e9-63ae278e8159
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STG_PRODUCTS_SOURCE
+          - locationName: TARGET
+            nodeName: STG_SUPPLIERS_SOURCE
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STG_PRODUCTS_SOURCE') }} "STG_PRODUCTS_SOURCE"
+            INNER JOIN {{ ref('TARGET', 'STG_SUPPLIERS_SOURCE') }} "STG_SUPPLIERS_SOURCE"
+            ON "STG_PRODUCTS_SOURCE"."SUPPLIER_ID" = "STG_SUPPLIERS_SOURCE"."SUPPLIER_ID"
+        name: STG_PRODUCTS_SUPPLIERS
+        noLinkRefs: []
+  name: STG_PRODUCTS_SUPPLIERS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

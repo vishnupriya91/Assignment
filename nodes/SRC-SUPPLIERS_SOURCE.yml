@@ -1,0 +1,92 @@
+fileVersion: 1
+id: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+name: SUPPLIERS_SOURCE
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4047b9c-be6a-4596-8d55-0e9d32ebcdc3
+          stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SUPPLIER_ID
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eecbd6cd-9985-4724-94bc-c94645c90eb9
+          stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: SUPPLIER_NAME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afc57483-c780-4002-96ce-324aaaccec13
+          stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+        config: {}
+        dataType: VARCHAR(100)
+        defaultValue: ""
+        description: ""
+        name: CITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 305d80ca-99cd-40c5-809c-0d585d84baf5
+          stepCounter: ed0b1656-ed93-4efa-9349-8255a55d2f1f
+        config: {}
+        dataType: VARCHAR(100)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: SUPPLIERS_SOURCE
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
