@@ -3,7 +3,7 @@ id: 950fa016-748b-45be-9d6c-07ccc8e89822
 name: LOGIN_HISTORY
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC
   metadata:
