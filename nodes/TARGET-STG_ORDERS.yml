@@ -15,7 +15,12 @@ operation:
   locationName: TARGET
   materializationType: table
   metadata:
-    appliedNodeTests: []
+    appliedNodeTests:
+      - continueOnFailure: true
+        description: ""
+        name: Test
+        runOrder: Before
+        templateString: select * from "TRAINING"."ASSIGNMENT"."STG_ORDERS" WHERE O_ORDERKEY < 0
     columns:
       - appliedColumnTests: {}
         columnReference:

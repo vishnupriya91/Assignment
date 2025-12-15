@@ -169,7 +169,8 @@ operation:
           joinCondition: |-
             FROM {{ ref('SRC', 'PRODUCTS_SOURCE') }} "PRODUCTS_SOURCE"
             WHERE "PRODUCTS_SOURCE"."PRICE" > 0 AND
-            "PRODUCTS_SOURCE"."STOCK_LEVEL" >= 0
+            "PRODUCTS_SOURCE"."STOCK_LEVEL" >= 0 AND 
+            "PRODUCTS_SOURCE"."PRODUCT_NAME" = '{{ parameters.PRODUCT_NAME}}'
         name: STG_PRODUCTS_SOURCE
         noLinkRefs: []
   name: STG_PRODUCTS_SOURCE
