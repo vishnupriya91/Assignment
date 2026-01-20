@@ -1,5 +1,11 @@
 fileVersion: 1
 id: "7"
-mappingDefinitions: {}
+mappingDefinitions:
+  SRC:
+    database: SNOWFLAKE_LEARNING_DB
+    schema: PUBLIC
+  TARGET:
+    database: TEST
+    schema: LOAD
 name: Testing
 type: Environment
