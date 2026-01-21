@@ -3,7 +3,7 @@ id: "8"
 mappingDefinitions:
   SRC:
     database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCDS_SF100TCL
+    schema: TPCH_SF10
   TARGET:
     database: TRAINING
     schema: ASSIGNMENT
