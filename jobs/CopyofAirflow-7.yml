@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "7"
+includeSelector: "+{location: TARGET name: DIM_NATION}"
+name: Copy of Airflow
+type: Job
